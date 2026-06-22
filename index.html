@@ -501,16 +501,23 @@ function seed(){
   const d=off=>{const x=new Date();x.setDate(x.getDate()+off);return iso(x);};
   const dt=(off,h=15)=>{const x=new Date();x.setDate(x.getDate()+off);x.setHours(h,0,0,0);return x.toISOString().slice(0,16);};
 
-  Store.set("users",[
-    {id:"u-admin",nombre:"Administrador",email:"admin@kore.com.ar",pwd:"kore2026",rol:"admin",suc:"Santa Fe",activo:true,creado:Date.now()},
-    {id:uid(),nombre:"Florencia (CM)",email:"flor@kore.com.ar",pwd:"flor1234",rol:"empleado",suc:"Santa Fe",activo:true,creado:Date.now()},
-  ]);
-  Store.set("promos",[
+  let _users=Store.get("users");
+  if(!Array.isArray(_users)||!_users.length){
+    Store.set("users",[
+      {id:"u-admin",nombre:"Administrador",email:"admin@kore.com.ar",pwd:"kore2026",rol:"admin",suc:"Santa Fe",activo:true,creado:Date.now()},
+      {id:uid(),nombre:"Florencia (CM)",email:"flor@kore.com.ar",pwd:"flor1234",rol:"empleado",suc:"Santa Fe",activo:true,creado:Date.now()},
+    ]);
+  } else if(!_users.some(u=>u.rol==="admin"&&u.activo!==false)){
+    _users.push({id:"u-admin-"+uid(),nombre:"Administrador",email:"admin@kore.com.ar",pwd:"kore2026",rol:"admin",suc:"Santa Fe",activo:true,creado:Date.now()});
+    Store.set("users",_users);
+  }
+  if(!Store.get("promos")) Store.set("promos",[
     {id:uid(),titulo:"Semana del ácido — Prodermic",desc:"30% en línea de ácidos y peelings. Mínimo 5 unidades surtidas.",tipo:"porcentaje",valor:30,desde:d(-3),hasta:d(4),marcas:["Prodermic"],sucs:["Santa Fe","Paraná","Esperanza"],canal:"profesional",destacada:true,autor:"Florencia (CM)",creada:Date.now()},
     {id:uid(),titulo:"Lidherma Pro 40% OFF",desc:"Liquidación de temporada en sueros y bioactivos seleccionados.",tipo:"porcentaje",valor:40,desde:d(-1),hasta:d(2),marcas:["Lidherma Pro"],sucs:SUCURSALES,canal:"ambos",destacada:false,autor:"Florencia (CM)",creada:Date.now()-86400000},
     {id:uid(),titulo:"Combo cabina Mira Dror",desc:"Peeling + neutralizante + post a precio combo. Ideal arranque de cabina.",tipo:"combo",valor:0,desde:d(2),hasta:d(12),marcas:["Mira Dror"],sucs:["Paraná","Concepción del Uruguay"],canal:"profesional",destacada:false,autor:"Administrador",creada:Date.now()-2*86400000},
     {id:uid(),titulo:"Parches de ojos 2x1 — Icono",desc:"Llevá dos, pagá uno. Solo público, mientras dure el stock.",tipo:"2x1",valor:0,desde:d(-10),hasta:d(-1),marcas:["Icono Cosmética"],sucs:["Santa Fe"],canal:"publico",destacada:false,autor:"Florencia (CM)",creada:Date.now()-9*86400000},
   ]);
+  if(!Store.get("capas")){
   const c1=uid(),c2=uid(),c3=uid();
   Store.set("capas",[
     {id:c1,titulo:"Protocolo de peeling con Mira Dror",desc:"Indicaciones, neutralización y post. Para cosmiatras y esteticistas.",fecha:dt(6,15),cupos:24,mod:"presencial",lugar:"Sucursal Santa Fe",instructor:"Dra. Vanesa Roldán",suc:"Santa Fe",creada:Date.now()},
@@ -522,7 +529,7 @@ function seed(){
     {id:uid(),capaId:c1,nombre:"Romina Díaz",contacto:"11 5566 7788",profesion:"Esteticista",suc:"Esperanza",por:"Florencia (CM)",fecha:Date.now()},
     {id:uid(),capaId:c3,nombre:"Lucía Fernández",contacto:"lu.fernandez@hotmail.com",profesion:"Centro de estética",suc:"Paraná",por:"Administrador",fecha:Date.now()},
   ]);
-  Store.set("seeded",true);
+  }
 }
 seed();
 
