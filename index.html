@@ -498,7 +498,6 @@ function initials(n){return (n||"?").split(" ").map(w=>w[0]).slice(0,2).join("")
 
 /* ---------- Seed ---------- */
 function seed(){
-  if(Store.get("seeded")) return;
   const d=off=>{const x=new Date();x.setDate(x.getDate()+off);return iso(x);};
   const dt=(off,h=15)=>{const x=new Date();x.setDate(x.getDate()+off);x.setHours(h,0,0,0);return x.toISOString().slice(0,16);};
 
