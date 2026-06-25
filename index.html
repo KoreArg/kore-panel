@@ -458,6 +458,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
           <div><b>Modo demo:</b> estos usuarios viven en este navegador y las contraseñas no están cifradas. Sirve para probar el circuito. En producción, el login y las cuentas se manejan con Supabase Auth (ver README) — ahí las contraseñas se guardan cifradas en el servidor y la base queda protegida.</div>
         </div>
+        <div style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">
+          <button class="btn sm" id="resetDemoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></svg>Restablecer datos de ejemplo</button>
+        </div>
         <div class="stats" id="userStats"></div>
         <div class="sec-head"><h2>Equipo</h2><span class="count" id="userCount"></span></div>
         <div id="userList" style="display:flex;flex-direction:column;gap:8px;margin-bottom:26px"></div>
@@ -581,17 +584,17 @@ function seed(){
     Store.set("users",_users);
   }
   if(!Store.get("promos")) Store.set("promos",[
-    {id:uid(),titulo:"Semana del ácido — Prodermic",desc:"30% en línea de ácidos y peelings. Mínimo 5 unidades surtidas.",tipo:"porcentaje",valor:30,desde:d(-3),hasta:d(4),marcas:["Prodermic"],sucs:["Santa Fe","Paraná","Esperanza"],canal:"profesional",destacada:true,autor:"Florencia (CM)",creada:Date.now()},
-    {id:uid(),titulo:"Lidherma Pro 40% OFF",desc:"Liquidación de temporada en sueros y bioactivos seleccionados.",tipo:"porcentaje",valor:40,desde:d(-1),hasta:d(2),marcas:["Lidherma Pro"],sucs:SUCURSALES,canal:"ambos",destacada:false,autor:"Florencia (CM)",creada:Date.now()-86400000},
+    {id:uid(),titulo:"Semana del ácido — Prodermic",img:"https://picsum.photos/seed/kore-acido/600/360",desc:"30% en línea de ácidos y peelings. Mínimo 5 unidades surtidas.",tipo:"porcentaje",valor:30,desde:d(-3),hasta:d(4),marcas:["Prodermic"],sucs:["Santa Fe","Paraná","Esperanza"],canal:"profesional",destacada:true,autor:"Florencia (CM)",creada:Date.now()},
+    {id:uid(),titulo:"Lidherma Pro 40% OFF",img:"https://picsum.photos/seed/kore-lidherma/600/360",desc:"Liquidación de temporada en sueros y bioactivos seleccionados.",tipo:"porcentaje",valor:40,desde:d(-1),hasta:d(2),marcas:["Lidherma Pro"],sucs:SUCURSALES,canal:"ambos",destacada:false,autor:"Florencia (CM)",creada:Date.now()-86400000},
     {id:uid(),titulo:"Combo cabina Mira Dror",desc:"Peeling + neutralizante + post a precio combo. Ideal arranque de cabina.",tipo:"combo",valor:0,desde:d(2),hasta:d(12),marcas:["Mira Dror"],sucs:["Paraná","Concepción del Uruguay"],canal:"profesional",destacada:false,autor:"Administrador",creada:Date.now()-2*86400000},
-    {id:uid(),titulo:"Parches de ojos 2x1 — Icono",desc:"Llevá dos, pagá uno. Solo público, mientras dure el stock.",tipo:"2x1",valor:0,desde:d(-10),hasta:d(-1),marcas:["Icono Cosmética"],sucs:["Santa Fe"],canal:"publico",destacada:false,autor:"Florencia (CM)",creada:Date.now()-9*86400000},
+    {id:uid(),titulo:"Parches de ojos 2x1 — Icono",img:"https://picsum.photos/seed/kore-parches/600/360",desc:"Llevá dos, pagá uno. Solo público, mientras dure el stock.",tipo:"2x1",valor:0,desde:d(-10),hasta:d(-1),marcas:["Icono Cosmética"],sucs:["Santa Fe"],canal:"publico",destacada:false,autor:"Florencia (CM)",creada:Date.now()-9*86400000},
   ]);
   if(!Store.get("capas")){
   const c1=uid(),c2=uid(),c3=uid();
   Store.set("capas",[
-    {id:c1,titulo:"Protocolo de peeling con Mira Dror",desc:"Indicaciones, neutralización y post. Para cosmiatras y esteticistas.",fecha:dt(6,15),cupos:24,mod:"presencial",lugar:"Sucursal Santa Fe",instructor:"Dra. Vanesa Roldán",suc:"Santa Fe",creada:Date.now()},
+    {id:c1,titulo:"Protocolo de peeling con Mira Dror",img:"https://picsum.photos/seed/kore-peeling/600/360",desc:"Indicaciones, neutralización y post. Para cosmiatras y esteticistas.",fecha:dt(6,15),cupos:24,mod:"presencial",lugar:"Sucursal Santa Fe",instructor:"Dra. Vanesa Roldán",suc:"Santa Fe",creada:Date.now()},
     {id:c2,titulo:"Activos concentrados: cómo armar una rutina vendible",desc:"Webinar abierto a todo el país. Combos rentables para tu cabina.",fecha:dt(11,19),cupos:100,mod:"online",lugar:"Google Meet (link al confirmar)",instructor:"Equipo técnico Koré",suc:"Online / todas",creada:Date.now()},
-    {id:c3,titulo:"Introducción a aparatología dérmica",desc:"Qué equipo para qué tratamiento. Cupo reducido con práctica.",fecha:dt(2,16),cupos:12,mod:"presencial",lugar:"Sucursal Paraná",instructor:"Lic. Gómez",suc:"Paraná",creada:Date.now()},
+    {id:c3,titulo:"Introducción a aparatología dérmica",img:"https://picsum.photos/seed/kore-aparato/600/360",desc:"Qué equipo para qué tratamiento. Cupo reducido con práctica.",fecha:dt(2,16),cupos:12,mod:"presencial",lugar:"Sucursal Paraná",instructor:"Lic. Gómez",suc:"Paraná",creada:Date.now()},
   ]);
   Store.set("inscriptos",[
     {id:uid(),capaId:c1,nombre:"Carla Méndez",contacto:"carla.estetica@gmail.com",profesion:"Cosmiatra",suc:"Santa Fe",por:"Florencia (CM)",fecha:Date.now()},
@@ -868,6 +871,13 @@ document.getElementById("drClose").onclick=closeDrawer; document.getElementById(
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeDrawer(); });
 
 function segHandler(id,attr,cb){ const wrap=document.getElementById(id); wrap.querySelectorAll("button").forEach(b=>b.onclick=()=>{ wrap.querySelectorAll("button").forEach(x=>x.classList.remove("on")); b.classList.add("on"); cb(b.dataset[attr]); }); }
+function resetDemo(){
+  if(!confirm("Esto borra promos, capacitaciones, inscriptos y usuarios guardados en este navegador y vuelve a cargar los ejemplos (con imágenes). ¿Continuar?")) return;
+  try{ Object.keys(localStorage).filter(k=>k.indexOf("kore_")===0).forEach(k=>localStorage.removeItem(k)); }catch(e){}
+  try{ location.reload(); return; }catch(e){}
+  Store._mem={}; seed(); Auth.current=(Store.get("users")||[]).find(u=>u.id==="u-admin")||null; if(Auth.current) enterApp(); else showLogin();
+}
+document.getElementById("resetDemoBtn").onclick=resetDemo;
 function toast(msg){ const t=document.createElement("div");t.className="toast";t.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>${esc(msg)}`; document.getElementById("toasts").appendChild(t); setTimeout(()=>{t.style.opacity="0";t.style.transition="opacity .3s";setTimeout(()=>t.remove(),300);},2600); }
 
 /* ===== Init ===== */
