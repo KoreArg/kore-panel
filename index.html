@@ -215,6 +215,62 @@
   .promo .cover,.capa .cover{height:148px;margin:-17px -17px 1px;border-radius:14px 14px 0 0;background-size:cover;background-position:center;background-color:#eef1ee}
   .capa .cover{height:138px}
 
+  /* payment tracking */
+  .insc-card{background:var(--surface);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+  .insc-card+.insc-card{margin-top:8px}
+  .insc-head{display:flex;align-items:center;gap:11px;padding:10px 12px;cursor:pointer}
+  .insc-head:hover{background:#fbfcfb}
+  .insc-head .who{flex:1;min-width:0}
+  .insc-head .who b{font-size:13.5px;font-weight:600;display:block;line-height:1.2}
+  .insc-head .who small{font-size:11.5px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .paybadge{font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:99px;white-space:nowrap}
+  .paybadge.pagado{background:var(--green-100);color:var(--green-700)}
+  .paybadge.parcial{background:var(--amber-100);color:var(--amber-700)}
+  .paybadge.debe{background:var(--red-100);color:var(--red-700)}
+  .paybadge.sincargo{background:#eef1ee;color:var(--muted)}
+  .chev{color:var(--faint);transition:transform .2s;flex:none}
+  .insc-card.open .chev{transform:rotate(180deg)}
+  .insc-body{display:none;padding:4px 12px 13px;border-top:1px solid var(--line);background:#fbfcfb}
+  .insc-card.open .insc-body{display:block}
+  .paygrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:11px 0}
+  .paygrid .field,.addpago .field{margin:0}
+  .paysum{display:flex;gap:16px;align-items:center;padding:9px 11px;background:#fff;border:1px solid var(--line);border-radius:9px;margin-bottom:11px;font-size:12px;color:var(--muted)}
+  .paysum b{font-family:var(--display);font-size:15px;display:block;color:var(--ink)}
+  .paysum .s-saldo b{color:var(--red-700)} .paysum .s-pagado b{color:var(--green-700)}
+  .pago-row{display:flex;align-items:center;gap:9px;font-size:12.5px;padding:6px 2px;border-bottom:1px dashed var(--line)}
+  .pago-row .m{font-weight:600;font-family:var(--display)}
+  .pago-row .d{color:var(--muted)}
+  .pago-row .x{margin-left:auto;border:0;background:transparent;color:var(--faint);cursor:pointer;padding:2px 6px;border-radius:5px;font-size:13px}
+  .pago-row .x:hover{background:var(--red-100);color:var(--red-700)}
+  .addpago{display:flex;gap:8px;align-items:flex-end;margin-top:11px}
+  .addpago .field{flex:1}
+
+  /* calendar / ventas */
+  .calbar{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .calbar b{font-family:var(--display);font-size:16px;min-width:158px;text-align:center;text-transform:capitalize}
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}
+  .cal .dow{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);text-align:center;padding:2px 0;font-weight:600}
+  .cal .cell{min-height:80px;border:1px solid var(--line);border-radius:10px;padding:7px 8px;background:var(--surface);cursor:pointer;display:flex;flex-direction:column;gap:2px;transition:border-color .12s,transform .1s}
+  .cal .cell:hover{border-color:var(--green-500);transform:translateY(-1px)}
+  .cal .cell.blank{visibility:hidden;cursor:default}
+  .cal .cell .dn{font-family:var(--display);font-size:13.5px;font-weight:600;color:var(--muted)}
+  .cal .cell.today{border-color:var(--green-500);box-shadow:0 0 0 2px var(--green-100)}
+  .cal .cell.today .dn{color:var(--green-700)}
+  .cal .cell.fut{opacity:.5}
+  .cal .cell .v{font-size:12.5px;font-weight:600;color:var(--ink);margin-top:auto;font-family:var(--display)}
+  .cal .cell .t{font-size:11px;color:var(--muted)}
+  .cal .cell .none{font-size:11px;color:var(--faint);margin-top:auto}
+  .sale-row{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin-bottom:7px}
+  .sale-row .hr{font-family:var(--display);font-weight:600;font-size:13px;color:var(--green-700);min-width:46px}
+  .sale-row .cli{flex:1;min-width:0;font-size:13px}
+  .sale-row .cli small{display:block;color:var(--muted);font-size:11.5px}
+  .sale-row .tk{font-family:var(--display);font-weight:600}
+  .sale-row .nobuy{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
+  .sale-row .x{border:0;background:transparent;color:var(--faint);cursor:pointer;padding:3px 6px;border-radius:6px;line-height:0}
+  .sale-row .x:hover{background:var(--red-100);color:var(--red-700)}
+  .ro-note{font-size:12.5px;color:var(--muted);background:#fbfcfb;border:1px dashed var(--line-strong);border-radius:9px;padding:10px 12px;margin-bottom:14px;display:flex;gap:8px;align-items:center}
+  .ro-note svg{width:15px;height:15px;flex:none;color:var(--faint)}
+
   .scrim{position:fixed;inset:0;background:rgba(20,32,25,.42);backdrop-filter:blur(2px);z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
   .scrim.open{opacity:1;pointer-events:auto}
   .drawer{position:fixed;top:0;right:0;height:100vh;width:min(460px,100%);background:var(--bg);z-index:60;transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px -30px rgba(44,71,22,.5)}
@@ -307,6 +363,11 @@
       <div class="group-label">Cargar</div>
       <button data-view="new-promo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Nueva promoción</button>
       <button data-view="new-capa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Nueva capacitación</button>
+      <div class="group-label">Sucursales</div>
+      <button data-view="sucursal" data-suc="Santa Fe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg>Santa Fe</button>
+      <button data-view="sucursal" data-suc="Paraná"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg>Paraná</button>
+      <button data-view="sucursal" data-suc="Concepción del Uruguay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg>C. del Uruguay</button>
+      <button data-view="sucursal" data-suc="Esperanza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></svg>Esperanza</button>
       <div class="group-label" data-admin>Administración</div>
       <button data-view="users">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -406,7 +467,7 @@
                 <label class="cbox" id="p_destLabel" style="width:fit-content"><input type="checkbox" id="p_destacada" />Mostrar destacada en el panel</label>
               </div>
             </div>
-            <div class="form-actions"><button type="submit" class="btn primary">Publicar promoción</button><button type="reset" class="btn">Limpiar</button><span class="note" id="promoAuthorNote"></span></div>
+            <div class="form-actions"><button type="submit" class="btn primary" id="promoSubmit">Publicar promoción</button><button type="reset" class="btn">Limpiar</button><span class="note" id="promoAuthorNote"></span></div>
           </form>
         </div>
       </section>
@@ -447,7 +508,7 @@
                 <select id="c_suc"><option>Santa Fe</option><option>Paraná</option><option>Concepción del Uruguay</option><option>Esperanza</option><option>Online / todas</option></select>
               </div>
             </div>
-            <div class="form-actions"><button type="submit" class="btn primary">Agendar capacitación</button><button type="reset" class="btn">Limpiar</button></div>
+            <div class="form-actions"><button type="submit" class="btn primary" id="capaSubmit">Agendar capacitación</button><button type="reset" class="btn">Limpiar</button></div>
           </form>
         </div>
       </section>
@@ -484,6 +545,19 @@
           </form>
         </div>
       </section>
+
+      <!-- SUCURSAL (calendario de ventas) -->
+      <section class="view" id="view-sucursal">
+        <div class="stats" id="sucStats"></div>
+        <div class="calbar">
+          <button class="btn ghost sm" id="calPrev" aria-label="Mes anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <b id="calLabel">—</b>
+          <button class="btn ghost sm" id="calNext" aria-label="Mes siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+          <button class="btn sm" id="calToday" style="margin-left:6px">Hoy</button>
+          <span class="spacer" style="flex:1"></span>
+        </div>
+        <div class="cal" id="calGrid"></div>
+      </section>
     </main>
   </div>
 </div>
@@ -504,7 +578,11 @@
         <div class="field"><input id="i_contacto" placeholder="Email o teléfono *" required /></div>
         <div class="form-row" style="gap:10px">
           <div class="field"><input id="i_profesion" placeholder="Profesión / rubro" /></div>
+          <div class="field"><input id="i_localidad" placeholder="Localidad" /></div>
+        </div>
+        <div class="form-row" style="gap:10px">
           <div class="field"><select id="i_suc"><option value="">Sucursal…</option><option>Santa Fe</option><option>Paraná</option><option>Concepción del Uruguay</option><option>Esperanza</option><option>Otra zona</option></select></div>
+          <div class="field"><input id="i_arancel" type="number" min="0" placeholder="Arancel $" /></div>
         </div>
         <button type="submit" class="btn primary block">Anotar</button>
       </form>
@@ -512,6 +590,36 @@
   </div>
   <div class="df">
     <button class="btn sm block" id="exportBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Descargar lista (CSV)</button>
+  </div>
+</aside>
+
+<!-- Drawer día (ventas) -->
+<aside class="drawer" id="dayDrawer" aria-hidden="true">
+  <div class="dh">
+    <div style="flex:1"><h2 id="dayTitle">Día</h2><div class="sub" id="daySub"></div></div>
+    <button class="btn ghost sm" id="dayClose" aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="db">
+    <div class="stats" id="dayStats" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px"></div>
+    <div id="dayReadonly"></div>
+    <div id="dayList"></div>
+    <div class="mini-form" id="dayForm" style="margin-top:14px">
+      <h4>Registrar ingreso / venta</h4>
+      <form id="saleForm" autocomplete="off">
+        <div class="form-row" style="gap:10px">
+          <div class="field"><label class="lab">Hora</label><input id="s_hora" type="time" required /></div>
+          <div class="field"><label class="lab">Cliente <span class="opt">· opcional</span></label><input id="s_cli" placeholder="Nombre" /></div>
+        </div>
+        <div class="form-row" style="gap:10px">
+          <div class="field"><label class="lab">¿Compró?</label><div class="seg" id="s_compro"><button type="button" data-b="1" class="on">Sí</button><button type="button" data-b="0">No</button></div></div>
+          <div class="field"><label class="lab">Ticket $</label><input id="s_ticket" type="number" min="0" placeholder="Monto" /></div>
+        </div>
+        <button type="submit" class="btn primary block">Registrar</button>
+      </form>
+    </div>
+  </div>
+  <div class="df">
+    <button class="btn sm block" id="dayExportBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Descargar día (CSV)</button>
   </div>
 </aside>
 
@@ -542,6 +650,10 @@ function val(id){const el=document.getElementById(id);return el?el.value.trim():
 function esc(s){return (s==null?"":s+"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 function initials(n){return (n||"?").split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase();}
 function cssUrl(u){return (u||"").replace(/["'()\\<>]/g,"").replace(/\s+/g,"%20");}
+const money=n=>"$"+Math.round(+n||0).toLocaleString("es-AR");
+const todayISO=()=>iso(today());
+function inscPagado(i){return (i.pagos||[]).reduce((s,p)=>s+(+p.monto||0),0);}
+function inscEstado(i){const a=+i.arancel||0,pg=inscPagado(i);if(a<=0)return{k:"sincargo",t:"Sin cargo"};if(pg<=0)return{k:"debe",t:"Debe"};if(pg>=a)return{k:"pagado",t:"Pagado"};return{k:"parcial",t:"Parcial"};}
 function fileToDataURL(file,maxW=900,q=0.72){
   return new Promise((res,rej)=>{
     const fr=new FileReader();
@@ -565,7 +677,7 @@ function wireImagePicker(prefix){
   drop.addEventListener("dragleave",()=>drop.classList.remove("drag"));
   drop.addEventListener("drop",async e=>{ e.preventDefault();drop.classList.remove("drag"); const f=e.dataTransfer.files[0]; if(f&&f.type.startsWith("image/")){ try{ show(await fileToDataURL(f)); url.value=""; }catch(_){} } });
   clear.addEventListener("click",e=>{ e.stopPropagation(); file.value="";url.value="";show(""); });
-  return { get:()=>value, clear:()=>{file.value="";url.value="";show("");} };
+  return { get:()=>value, set:(v)=>show(v), clear:()=>{file.value="";url.value="";show("");} };
 }
 
 /* ---------- Seed ---------- */
@@ -597,10 +709,21 @@ function seed(){
     {id:c3,titulo:"Introducción a aparatología dérmica",img:"https://picsum.photos/seed/kore-aparato/600/360",desc:"Qué equipo para qué tratamiento. Cupo reducido con práctica.",fecha:dt(2,16),cupos:12,mod:"presencial",lugar:"Sucursal Paraná",instructor:"Lic. Gómez",suc:"Paraná",creada:Date.now()},
   ]);
   Store.set("inscriptos",[
-    {id:uid(),capaId:c1,nombre:"Carla Méndez",contacto:"carla.estetica@gmail.com",profesion:"Cosmiatra",suc:"Santa Fe",por:"Florencia (CM)",fecha:Date.now()},
-    {id:uid(),capaId:c1,nombre:"Romina Díaz",contacto:"11 5566 7788",profesion:"Esteticista",suc:"Esperanza",por:"Florencia (CM)",fecha:Date.now()},
-    {id:uid(),capaId:c3,nombre:"Lucía Fernández",contacto:"lu.fernandez@hotmail.com",profesion:"Centro de estética",suc:"Paraná",por:"Administrador",fecha:Date.now()},
+    {id:uid(),capaId:c1,nombre:"Carla Méndez",contacto:"carla.estetica@gmail.com",profesion:"Cosmiatra",localidad:"Santa Fe",suc:"Santa Fe",por:"Florencia (CM)",arancel:15000,pagos:[{id:uid(),monto:15000,fecha:iso(today()),nota:"Transferencia"}],fecha:Date.now()},
+    {id:uid(),capaId:c1,nombre:"Romina Díaz",contacto:"11 5566 7788",profesion:"Esteticista",localidad:"Esperanza",suc:"Esperanza",por:"Florencia (CM)",arancel:15000,pagos:[{id:uid(),monto:5000,fecha:iso(today()),nota:"Seña"}],fecha:Date.now()},
+    {id:uid(),capaId:c3,nombre:"Lucía Fernández",contacto:"lu.fernandez@hotmail.com",profesion:"Centro de estética",localidad:"Paraná",suc:"Paraná",por:"Administrador",arancel:12000,pagos:[],fecha:Date.now()},
   ]);
+  }
+  if(!Store.get("ventas")){
+    const dISO=off=>{const x=new Date();x.setDate(x.getDate()+off);return iso(x);};
+    const V=[];
+    const push=(suc,off,hora,cli,compro,ticket)=>V.push({id:uid(),suc,fecha:dISO(off),hora,cliente:cli,compro,ticket:compro?ticket:0,creada:Date.now()});
+    push("Santa Fe",0,"10:15","Marta G.",true,18500); push("Santa Fe",0,"11:40","",false,0); push("Santa Fe",0,"12:05","Estética Belén",true,42000);
+    push("Santa Fe",-1,"09:50","",true,15200); push("Santa Fe",-1,"16:20","Vanina R.",true,27800); push("Santa Fe",-1,"17:00","",false,0);
+    push("Santa Fe",-3,"10:30","Centro Aura",true,64000); push("Santa Fe",-3,"15:10","",true,12300);
+    push("Paraná",0,"10:00","",true,9800); push("Paraná",0,"13:25","Lucía F.",true,33500);
+    push("Paraná",-2,"11:15","",true,21000);
+    Store.set("ventas",V);
   }
 }
 seed();
@@ -681,10 +804,11 @@ function renderPromos(){
       ${p.img?`<div class="cover" style="background-image:url('${cssUrl(p.img)}')"></div>`:""}      <div class="top">${disc?`<div class="disc">${disc}</div>`:""}<div style="flex:1"><h3>${esc(p.titulo)}</h3><span class="channel">${chan}</span></div>${p.destacada?`<span class="star" title="Destacada"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg></span>`:""}</div>
       ${p.desc?`<p class="desc">${esc(p.desc)}</p>`:""}
       <div class="brands">${(p.marcas||[]).map(m=>`<span class="tag">${esc(m)}</span>`).join("")}${(p.sucs||[]).map(s=>`<span class="tag suc">${esc(s)}</span>`).join("")}</div>
-      <div class="foot"><span class="vig ${v.key}"><span class="dot"></span>${v.label}</span><span class="who">${fmtDate(p.desde)}–${fmtDate(p.hasta)}${p.autor?" · "+esc(p.autor):""}</span><button class="btn ghost sm" data-del-promo="${p.id}" title="Eliminar" style="margin-left:auto;padding:5px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div>
+      <div class="foot"><span class="vig ${v.key}"><span class="dot"></span>${v.label}</span><span class="who">${fmtDate(p.desde)}–${fmtDate(p.hasta)}${p.autor?" · "+esc(p.autor):""}</span><button class="btn ghost sm" data-edit-promo="${p.id}" title="Editar" style="margin-left:auto;padding:5px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="btn ghost sm" data-del-promo="${p.id}" title="Eliminar" style="padding:5px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div>
     </article>`;
   }).join("");
   grid.querySelectorAll("[data-del-promo]").forEach(b=>b.onclick=()=>{ if(confirm("¿Eliminar esta promoción?")){ Store.set("promos",(Store.get("promos")||[]).filter(x=>x.id!==b.dataset.delPromo)); renderPromos(); toast("Promoción eliminada"); }});
+  grid.querySelectorAll("[data-edit-promo]").forEach(b=>b.onclick=()=>editPromo(b.dataset.editPromo));
 }
 
 /* ===== CAPAS ===== */
@@ -710,42 +834,81 @@ function renderCapas(){
       <h3>${esc(c.titulo)}</h3>${c.desc?`<p class="desc" style="color:var(--muted);font-size:13px;margin:0">${esc(c.desc)}</p>`:""}
       <div class="meta">${c.lugar?`<span>📍 ${esc(c.lugar)}</span>`:""}${c.instructor?`<span>· ${esc(c.instructor)}</span>`:""}</div>
       <div class="cupo"><div class="lab"><span>${ins} de ${cup} inscriptos</span><span>${pct}%</span></div><div class="bar"><i class="${fill}" style="width:${pct}%"></i></div></div>
-      <div class="acts"><button class="btn sm primary" data-insc="${c.id}" style="flex:1">Anotar / ver inscriptos</button></div>
+      <div class="acts"><button class="btn sm primary" data-insc="${c.id}" style="flex:1">Inscriptos</button><button class="btn sm" data-edit-capa="${c.id}">Editar</button><button class="btn ghost sm" data-del-capa="${c.id}" title="Eliminar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div>
     </article>`;
   }).join("");
   grid.querySelectorAll("[data-insc]").forEach(b=>b.onclick=()=>openDrawer(b.dataset.insc));
+  grid.querySelectorAll("[data-edit-capa]").forEach(b=>b.onclick=()=>editCapa(b.dataset.editCapa));
+  grid.querySelectorAll("[data-del-capa]").forEach(b=>b.onclick=()=>{ if(confirm("¿Eliminar esta capacitación y sus inscriptos?")){ Store.set("capas",(Store.get("capas")||[]).filter(x=>x.id!==b.dataset.delCapa)); Store.set("inscriptos",(Store.get("inscriptos")||[]).filter(x=>x.capaId!==b.dataset.delCapa)); renderCapas(); toast("Capacitación eliminada"); }});
 }
 
 /* ===== Drawer inscriptos ===== */
 let drawerCapa=null;
 function openDrawer(id){
   drawerCapa=id; const c=(Store.get("capas")||[]).find(x=>x.id===id); if(!c)return;
+  expandedInsc=null;
   const dp=capaDateParts(c.fecha);
   document.getElementById("drTitle").textContent=c.titulo;
   document.getElementById("drSub").textContent=`${dp.full} · ${dp.time} h · cupo ${c.cupos}`;
   renderInsc(); document.getElementById("drawer").classList.add("open"); document.getElementById("scrim").classList.add("open"); document.getElementById("drawer").setAttribute("aria-hidden","false");
 }
 function closeDrawer(){ document.getElementById("drawer").classList.remove("open"); document.getElementById("scrim").classList.remove("open"); document.getElementById("drawer").setAttribute("aria-hidden","true"); drawerCapa=null; }
+let expandedInsc=null;
+function updateInsc(id,mut,rerender){ const all=Store.get("inscriptos")||[],i=all.find(x=>x.id===id); if(!i)return; mut(i); Store.set("inscriptos",all); if(rerender){ expandedInsc=id; renderInsc(); } }
 function renderInsc(){
   const c=(Store.get("capas")||[]).find(x=>x.id===drawerCapa),list=inscriptosDe(drawerCapa),wrap=document.getElementById("inscList"),cupo=c?+c.cupos:0;
-  if(!list.length){ wrap.innerHTML=`<div class="empty" style="padding:30px 16px"><p style="margin:0">Todavía no hay nadie anotado.<br>Sumá la primera persona abajo.</p></div>`; }
-  else{
-    wrap.innerHTML=`<div class="lab" style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-bottom:4px"><span>${list.length} anotados</span>${cupo?`<span>${Math.max(0,cupo-list.length)} cupos libres</span>`:""}</div>`+
-      list.map(i=>`<div class="insc"><div class="av">${initials(i.nombre)}</div><div class="who"><b>${esc(i.nombre)}</b><small>${esc(i.contacto||"")}${i.profesion?" · "+esc(i.profesion):""}${i.suc?" · "+esc(i.suc):""}</small></div><button class="x" data-del-insc="${i.id}" title="Quitar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>`).join("");
-    wrap.querySelectorAll("[data-del-insc]").forEach(b=>b.onclick=()=>{ Store.set("inscriptos",(Store.get("inscriptos")||[]).filter(x=>x.id!==b.dataset.delInsc)); renderInsc(); renderCapas(); toast("Persona quitada de la lista"); });
-  }
+  if(!list.length){ wrap.innerHTML=`<div class="empty" style="padding:30px 16px"><p style="margin:0">Todavía no hay nadie anotado.<br>Sumá la primera persona abajo.</p></div>`; return; }
+  const totRec=list.reduce((s,i)=>s+inscPagado(i),0), totAr=list.reduce((s,i)=>s+(+i.arancel||0),0);
+  wrap.innerHTML=`<div class="lab" style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-bottom:8px"><span>${list.length} anotados${cupo?` · ${Math.max(0,cupo-list.length)} libres`:""}</span><span>Recaudado ${money(totRec)} / ${money(totAr)}</span></div>`+
+    list.map(i=>{
+      const est=inscEstado(i),pg=inscPagado(i),ar=+i.arancel||0,saldo=Math.max(0,ar-pg),open=expandedInsc===i.id?"open":"";
+      const sub=[i.contacto,i.profesion,i.localidad,i.suc].filter(Boolean).map(esc).join(" · ");
+      return `<div class="insc-card ${open}">
+        <div class="insc-head" data-toggle="${i.id}">
+          <div class="av">${initials(i.nombre)}</div>
+          <div class="who"><b>${esc(i.nombre)}</b><small>${sub}</small></div>
+          <span class="paybadge ${est.k}">${est.t}</span>
+          <svg class="chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="insc-body">
+          <div class="paygrid">
+            <div class="field"><label class="lab">Localidad</label><input data-loc="${i.id}" value="${esc(i.localidad||"")}" placeholder="Ciudad / pueblo"></div>
+            <div class="field"><label class="lab">Arancel total</label><input type="number" min="0" data-ar="${i.id}" value="${ar||""}" placeholder="0"></div>
+          </div>
+          <div class="paysum">
+            <div class="s-pagado">Pagado<b>${money(pg)}</b></div>
+            <div class="s-saldo">Saldo<b>${money(saldo)}</b></div>
+          </div>
+          <div class="lab" style="font-size:11.5px;color:var(--muted);margin-bottom:2px">Pagos / aportes</div>
+          <div>${(i.pagos||[]).length? i.pagos.map(p=>`<div class="pago-row"><span class="m">${money(p.monto)}</span><span class="d">${p.fecha?new Date(p.fecha+"T00:00:00").toLocaleDateString("es-AR"):""}${p.nota?" · "+esc(p.nota):""}</span><button class="x" data-delpago="${i.id}|${p.id}" title="Quitar aporte">✕</button></div>`).join(""):`<div class="hint" style="padding:5px 0">Sin aportes cargados.</div>`}</div>
+          <div class="addpago">
+            <div class="field"><label class="lab">Aporte $</label><input type="number" min="0" data-pm="${i.id}" placeholder="Monto"></div>
+            <div class="field"><label class="lab">Fecha</label><input type="date" data-pf="${i.id}" value="${todayISO()}"></div>
+            <button class="btn sm primary" data-addpago="${i.id}">Sumar</button>
+          </div>
+          <div style="margin-top:12px"><button class="btn ghost sm danger" data-del-insc="${i.id}">Eliminar inscripto</button></div>
+        </div>
+      </div>`;
+    }).join("");
+  wrap.querySelectorAll("[data-toggle]").forEach(h=>h.onclick=()=>{ expandedInsc=expandedInsc===h.dataset.toggle?null:h.dataset.toggle; renderInsc(); });
+  wrap.querySelectorAll("[data-loc]").forEach(inp=>inp.onchange=()=>updateInsc(inp.dataset.loc,i=>i.localidad=inp.value.trim(),false));
+  wrap.querySelectorAll("[data-ar]").forEach(inp=>inp.onchange=()=>updateInsc(inp.dataset.ar,i=>i.arancel=+inp.value||0,true));
+  wrap.querySelectorAll("[data-addpago]").forEach(b=>b.onclick=()=>{ const id=b.dataset.addpago,monto=+wrap.querySelector('[data-pm="'+id+'"]').value||0,fecha=wrap.querySelector('[data-pf="'+id+'"]').value; if(monto<=0){toast("Ingresá un monto válido");return;} updateInsc(id,i=>{(i.pagos=i.pagos||[]).push({id:uid(),monto,fecha,nota:""});},true); toast("Aporte cargado"); });
+  wrap.querySelectorAll("[data-delpago]").forEach(b=>b.onclick=()=>{ const parts=b.dataset.delpago.split("|"); updateInsc(parts[0],i=>{i.pagos=(i.pagos||[]).filter(p=>p.id!==parts[1]);},true); });
+  wrap.querySelectorAll("[data-del-insc]").forEach(b=>b.onclick=()=>{ if(confirm("¿Eliminar este inscripto?")){ Store.set("inscriptos",(Store.get("inscriptos")||[]).filter(x=>x.id!==b.dataset.delInsc)); renderInsc(); renderCapas(); toast("Inscripto eliminado"); } });
 }
 document.getElementById("inscForm").addEventListener("submit",e=>{
   e.preventDefault(); const nombre=val("i_nombre"),contacto=val("i_contacto"); if(!nombre||!contacto)return;
   const all=Store.get("inscriptos")||[];
-  all.push({id:uid(),capaId:drawerCapa,nombre,contacto,profesion:val("i_profesion"),suc:val("i_suc"),por:Auth.current?.nombre||"",fecha:Date.now()});
+  all.push({id:uid(),capaId:drawerCapa,nombre,contacto,profesion:val("i_profesion"),localidad:val("i_localidad"),suc:val("i_suc"),arancel:+val("i_arancel")||0,pagos:[],por:Auth.current?.nombre||"",fecha:Date.now()});
   Store.set("inscriptos",all); e.target.reset(); renderInsc(); renderCapas(); toast(nombre.split(" ")[0]+" quedó anotada"); document.getElementById("i_nombre").focus();
 });
 document.getElementById("exportBtn").onclick=()=>{
   const c=(Store.get("capas")||[]).find(x=>x.id===drawerCapa),list=inscriptosDe(drawerCapa);
   if(!list.length){ toast("No hay inscriptos para exportar"); return; }
-  const rows=[["Nombre","Contacto","Profesión","Sucursal","Anotado por","Fecha"]];
-  list.forEach(i=>rows.push([i.nombre,i.contacto,i.profesion||"",i.suc||"",i.por||"",new Date(i.fecha).toLocaleString("es-AR")]));
+  const rows=[["Nombre","Contacto","Profesión","Localidad","Sucursal","Arancel","Pagado","Saldo","Estado","Pagos","Anotado por","Fecha"]];
+  list.forEach(i=>{ const pg=inscPagado(i),ar=+i.arancel||0,pagos=(i.pagos||[]).map(p=>p.monto+" ("+(p.fecha||"")+")").join(" | ");
+    rows.push([i.nombre,i.contacto,i.profesion||"",i.localidad||"",i.suc||"",ar,pg,Math.max(0,ar-pg),inscEstado(i).t,pagos,i.por||"",new Date(i.fecha).toLocaleString("es-AR")]); });
   const csv="\uFEFF"+rows.map(r=>r.map(f=>`"${(f+"").replace(/"/g,'""')}"`).join(",")).join("\n");
   const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
   a.download=`inscriptos-${(c?c.titulo:"capacitacion").replace(/[^a-z0-9]+/gi,"-").toLowerCase()}.csv`; a.click(); URL.revokeObjectURL(a.href); toast("Lista descargada");
@@ -753,6 +916,8 @@ document.getElementById("exportBtn").onclick=()=>{
 
 /* ===== Form: promo ===== */
 let pTipo="porcentaje",pCanal="ambos",pMarcasSel=new Set(),pSucsSel=new Set(),pImg=null,cImg=null;
+let editingPromoId=null,editingCapaId=null;
+function segSet(id,attr,value){ const w=document.getElementById(id); if(!w)return; w.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset[attr]===value)); }
 function initPromoForm(){
   const mc=document.getElementById("p_marcas");
   mc.innerHTML=MARCAS.map(m=>`<label class="cbox" data-m="${m}"><input type="checkbox">${m}</label>`).join("");
@@ -776,21 +941,56 @@ document.getElementById("promoForm").addEventListener("submit",e=>{
   e.preventDefault();
   if(!pSucsSel.size){ toast("Elegí al menos una sucursal"); return; }
   const desde=val("p_desde"),hasta=val("p_hasta"); if(hasta<desde){ toast("La fecha de fin no puede ser anterior al inicio"); return; }
-  const all=Store.get("promos")||[];
-  all.push({id:uid(),titulo:val("p_titulo"),desc:val("p_desc"),img:pImg?pImg.get():"",tipo:pTipo,valor:+val("p_valor")||0,desde,hasta,marcas:[...pMarcasSel],sucs:[...pSucsSel],canal:pCanal,destacada:document.getElementById("p_destacada").checked,autor:Auth.current?.nombre||"",creada:Date.now()});
-  const ok=Store.set("promos",all); resetPromoForm(); toast(ok?"Promoción publicada":"Publicada, pero la imagen pesaba demasiado para guardarla. Probá una más liviana o una URL."); go("promos");
+  const data={titulo:val("p_titulo"),desc:val("p_desc"),img:pImg?pImg.get():"",tipo:pTipo,valor:+val("p_valor")||0,desde,hasta,marcas:[...pMarcasSel],sucs:[...pSucsSel],canal:pCanal,destacada:document.getElementById("p_destacada").checked};
+  const all=Store.get("promos")||[]; let ok;
+  if(editingPromoId){ const p=all.find(x=>x.id===editingPromoId); if(p)Object.assign(p,data); ok=Store.set("promos",all); editingPromoId=null; }
+  else { data.id=uid(); data.autor=Auth.current?.nombre||""; data.creada=Date.now(); all.push(data); ok=Store.set("promos",all); }
+  clearPromoForm(); toast(ok?"Promoción guardada":"Guardada, pero la imagen pesaba demasiado. Probá una más liviana o una URL."); go("promos");
 });
-document.getElementById("promoForm").addEventListener("reset",()=>setTimeout(resetPromoForm,0));
+document.getElementById("promoForm").addEventListener("reset",()=>setTimeout(()=>{ resetPromoForm(); editingPromoId=null; segSet("p_tipo","t","porcentaje"); segSet("p_canal","c","ambos"); pTipo="porcentaje";pCanal="ambos"; updateValHint(); document.getElementById("promoSubmit").textContent="Publicar promoción"; },0));
+document.getElementById("capaForm").addEventListener("reset",()=>setTimeout(()=>{ editingCapaId=null; cMod="presencial"; segSet("c_mod","m","presencial"); if(cImg)cImg.clear(); document.getElementById("capaSubmit").textContent="Agendar capacitación"; },0));
 function resetPromoForm(){ pMarcasSel.clear();pSucsSel.clear(); document.querySelectorAll("#p_marcas .cbox,#p_sucs .cbox").forEach(l=>l.classList.remove("on")); document.getElementById("p_destLabel").classList.remove("on"); if(pImg)pImg.clear(); }
+function clearPromoForm(){ editingPromoId=null; document.getElementById("promoForm").reset(); resetPromoForm(); pTipo="porcentaje";pCanal="ambos"; segSet("p_tipo","t","porcentaje"); segSet("p_canal","c","ambos"); document.getElementById("p_desde").value=iso(today()); const h=new Date();h.setDate(h.getDate()+7);document.getElementById("p_hasta").value=iso(h); updateValHint(); document.getElementById("promoSubmit").textContent="Publicar promoción"; }
+function editPromo(id){
+  const p=(Store.get("promos")||[]).find(x=>x.id===id); if(!p)return;
+  editingPromoId=id;
+  document.getElementById("p_titulo").value=p.titulo||""; document.getElementById("p_desc").value=p.desc||"";
+  if(pImg)pImg.set(p.img||"");
+  pTipo=p.tipo||"porcentaje"; segSet("p_tipo","t",pTipo);
+  document.getElementById("p_valor").value=p.valor||"";
+  document.getElementById("p_desde").value=p.desde||iso(today()); document.getElementById("p_hasta").value=p.hasta||"";
+  pCanal=p.canal||"ambos"; segSet("p_canal","c",pCanal);
+  document.getElementById("p_destacada").checked=!!p.destacada; document.getElementById("p_destLabel").classList.toggle("on",!!p.destacada);
+  pMarcasSel=new Set(p.marcas||[]); document.querySelectorAll("#p_marcas .cbox").forEach(l=>{ const on=pMarcasSel.has(l.dataset.m); l.classList.toggle("on",on); l.querySelector("input").checked=on; });
+  pSucsSel=new Set(p.sucs||[]); document.querySelectorAll("#p_sucs .cbox").forEach(l=>{ const on=pSucsSel.has(l.dataset.s); l.classList.toggle("on",on); l.querySelector("input").checked=on; });
+  updateValHint(); document.getElementById("promoSubmit").textContent="Guardar cambios";
+  go("new-promo"); document.getElementById("pageTitle").textContent="Editar promoción"; document.getElementById("pageSub").textContent="Modificás una promo existente";
+}
 
 /* ===== Form: capa ===== */
 let cMod="presencial";
 function initCapaForm(){ segHandler("c_mod","m",v=>cMod=v); if(!cImg)cImg=wireImagePicker("c"); const n=new Date();n.setDate(n.getDate()+7);n.setHours(15,0,0,0); document.getElementById("c_fecha").value=n.toISOString().slice(0,16); }
 document.getElementById("capaForm").addEventListener("submit",e=>{
-  e.preventDefault(); const all=Store.get("capas")||[];
-  all.push({id:uid(),titulo:val("c_titulo"),desc:val("c_desc"),img:cImg?cImg.get():"",fecha:val("c_fecha"),cupos:+val("c_cupos")||1,mod:cMod,lugar:val("c_lugar"),instructor:val("c_instructor"),suc:val("c_suc"),creada:Date.now()});
-  const ok=Store.set("capas",all); if(cImg)cImg.clear(); e.target.reset(); initCapaForm(); toast(ok?"Capacitación agendada":"Agendada, pero la imagen pesaba demasiado. Probá una más liviana o una URL."); go("capas");
+  e.preventDefault();
+  const data={titulo:val("c_titulo"),desc:val("c_desc"),img:cImg?cImg.get():"",fecha:val("c_fecha"),cupos:+val("c_cupos")||1,mod:cMod,lugar:val("c_lugar"),instructor:val("c_instructor"),suc:val("c_suc")};
+  const all=Store.get("capas")||[]; let ok;
+  if(editingCapaId){ const c=all.find(x=>x.id===editingCapaId); if(c)Object.assign(c,data); ok=Store.set("capas",all); editingCapaId=null; }
+  else { data.id=uid(); data.creada=Date.now(); all.push(data); ok=Store.set("capas",all); }
+  clearCapaForm(); toast(ok?"Capacitación guardada":"Guardada, pero la imagen pesaba demasiado. Probá una más liviana o una URL."); go("capas");
 });
+function clearCapaForm(){ editingCapaId=null; document.getElementById("capaForm").reset(); cMod="presencial"; segSet("c_mod","m","presencial"); if(cImg)cImg.clear(); const n=new Date();n.setDate(n.getDate()+7);n.setHours(15,0,0,0); document.getElementById("c_fecha").value=n.toISOString().slice(0,16); document.getElementById("capaSubmit").textContent="Agendar capacitación"; }
+function editCapa(id){
+  const c=(Store.get("capas")||[]).find(x=>x.id===id); if(!c)return;
+  editingCapaId=id;
+  document.getElementById("c_titulo").value=c.titulo||""; document.getElementById("c_desc").value=c.desc||"";
+  if(cImg)cImg.set(c.img||"");
+  document.getElementById("c_fecha").value=c.fecha||""; document.getElementById("c_cupos").value=c.cupos||1;
+  cMod=c.mod||"presencial"; segSet("c_mod","m",cMod);
+  document.getElementById("c_lugar").value=c.lugar||""; document.getElementById("c_instructor").value=c.instructor||"";
+  document.getElementById("c_suc").value=c.suc||"Santa Fe";
+  document.getElementById("capaSubmit").textContent="Guardar cambios";
+  go("new-capa"); document.getElementById("pageTitle").textContent="Editar capacitación"; document.getElementById("pageSub").textContent="Modificás una capacitación existente";
+}
 
 /* ===== USERS (admin) ===== */
 let uRol="empleado";
@@ -846,29 +1046,103 @@ const TITLES={
   "new-capa":["Nueva capacitación","Agendá una fecha y abrí inscripciones"],
   users:["Usuarios","Crear y administrar las cuentas del equipo"],
 };
-function go(view){
+let currentSuc="Santa Fe";
+function go(view,arg){
   if(view==="users" && !Auth.isAdmin()) view="promos";
+  if(view==="sucursal" && arg) currentSuc=arg;
   document.querySelectorAll(".view").forEach(v=>v.classList.remove("on"));
   document.getElementById("view-"+view).classList.add("on");
-  document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
-  const [t,s]=TITLES[view]||["",""]; document.getElementById("pageTitle").textContent=t; document.getElementById("pageSub").textContent=s;
+  document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active", b.dataset.view===view && (view!=="sucursal"||b.dataset.suc===currentSuc)));
+  if(view==="sucursal"){ document.getElementById("pageTitle").textContent="Sucursal "+currentSuc; document.getElementById("pageSub").textContent="Registro diario de clientes y ventas"; }
+  else { const [t,s]=TITLES[view]||["",""]; document.getElementById("pageTitle").textContent=t; document.getElementById("pageSub").textContent=s; }
   const top=document.getElementById("topAction");
   if(view==="capas"||view==="new-capa"){ top.dataset.view="new-capa"; top.lastChild.textContent="Nueva capacitación"; }
   else { top.dataset.view="new-promo"; top.lastChild.textContent="Nueva promoción"; }
-  top.style.display=(view.startsWith("new")||view==="users")?"none":"inline-flex";
+  top.style.display=(view.startsWith("new")||view==="users"||view==="sucursal")?"none":"inline-flex";
   if(view==="promos") renderPromos();
   if(view==="capas") renderCapas();
   if(view==="users") renderUsers();
+  if(view==="sucursal") renderSucursal();
   document.getElementById("side").classList.remove("open"); window.scrollTo(0,0);
 }
-document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>go(b.dataset.view));
-document.getElementById("topAction").onclick=function(){ go(this.dataset.view); };
+document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{ if(b.dataset.view==="new-promo")clearPromoForm(); if(b.dataset.view==="new-capa")clearCapaForm(); go(b.dataset.view,b.dataset.suc); });
+document.getElementById("topAction").onclick=function(){ if(this.dataset.view==="new-promo")clearPromoForm(); if(this.dataset.view==="new-capa")clearCapaForm(); go(this.dataset.view); };
+
+/* ===== Sucursales · calendario de ventas ===== */
+let calCursor=new Date(); calCursor.setDate(1);
+let dayCtx=null, sCompro=true;
+function ventasDe(suc,fecha){ return (Store.get("ventas")||[]).filter(v=>v.suc===suc && v.fecha===fecha); }
+function dayAgg(entries){ const comp=entries.filter(e=>e.compro); const ing=comp.reduce((s,e)=>s+(+e.ticket||0),0); return {ventas:comp.length,clientes:entries.length,ingresos:ing,ticketProm:comp.length?ing/comp.length:0}; }
+function renderSucursal(){
+  const y=calCursor.getFullYear(),m=calCursor.getMonth();
+  document.getElementById("calLabel").textContent=calCursor.toLocaleDateString("es-AR",{month:"long",year:"numeric"});
+  const monthE=(Store.get("ventas")||[]).filter(v=>{ if(v.suc!==currentSuc)return false; const d=new Date(v.fecha+"T00:00:00"); return d.getFullYear()===y&&d.getMonth()===m; });
+  const mg=dayAgg(monthE);
+  document.getElementById("sucStats").innerHTML=[
+    {n:mg.ventas,l:"Ventas del mes",cls:""},{n:money(mg.ingresos),l:"Ingresos del mes",cls:""},
+    {n:mg.ventas?money(mg.ticketProm):"$0",l:"Ticket promedio",cls:"muted"},{n:mg.clientes,l:"Clientes ingresados",cls:"muted"}
+  ].map(s=>`<div class="stat ${s.cls}"><div class="tick"></div><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join("");
+  const dows=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+  const off=(new Date(y,m,1).getDay()+6)%7, days=new Date(y,m+1,0).getDate(), tIso=todayISO();
+  let cells=dows.map(d=>`<div class="dow">${d}</div>`).join("");
+  for(let i=0;i<off;i++) cells+=`<div class="cell blank"></div>`;
+  for(let d=1;d<=days;d++){
+    const ds=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`, ag=dayAgg(ventasDe(currentSuc,ds)), isT=ds===tIso, fut=ds>tIso;
+    cells+=`<div class="cell ${isT?'today':''} ${fut?'fut':''}" data-day="${ds}"><div class="dn">${d}</div>${ag.clientes?`<div class="v">${ag.ventas} ${ag.ventas===1?'venta':'ventas'}</div><div class="t">${ag.ventas?money(ag.ticketProm):'—'}</div>`:`<div class="none">—</div>`}</div>`;
+  }
+  document.getElementById("calGrid").innerHTML=cells;
+  document.querySelectorAll("#calGrid .cell[data-day]").forEach(c=>c.onclick=()=>openDay(c.dataset.day));
+}
+document.getElementById("calPrev").onclick=()=>{ calCursor.setMonth(calCursor.getMonth()-1); renderSucursal(); };
+document.getElementById("calNext").onclick=()=>{ calCursor.setMonth(calCursor.getMonth()+1); renderSucursal(); };
+document.getElementById("calToday").onclick=()=>{ calCursor=new Date(); calCursor.setDate(1); renderSucursal(); };
+function openDay(fecha){
+  dayCtx={suc:currentSuc,fecha}; const d=new Date(fecha+"T00:00:00");
+  document.getElementById("dayTitle").textContent=d.toLocaleDateString("es-AR",{weekday:"long",day:"numeric",month:"long"});
+  document.getElementById("daySub").textContent="Sucursal "+currentSuc;
+  renderDay();
+  document.getElementById("dayDrawer").classList.add("open"); document.getElementById("scrim").classList.add("open"); document.getElementById("dayDrawer").setAttribute("aria-hidden","false");
+}
+function closeDay(){ document.getElementById("dayDrawer").classList.remove("open"); document.getElementById("scrim").classList.remove("open"); document.getElementById("dayDrawer").setAttribute("aria-hidden","true"); dayCtx=null; }
+function renderDay(){
+  if(!dayCtx) return;
+  const entries=ventasDe(dayCtx.suc,dayCtx.fecha).slice().sort((a,b)=>(a.hora||"").localeCompare(b.hora||"")), ag=dayAgg(entries), editable=dayCtx.fecha===todayISO();
+  document.getElementById("dayStats").innerHTML=[
+    {n:ag.ventas,l:"Ventas"},{n:ag.ventas?money(ag.ticketProm):"$0",l:"Ticket prom."},{n:money(ag.ingresos),l:"Total"}
+  ].map(s=>`<div class="stat"><div class="tick"></div><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join("");
+  document.getElementById("dayReadonly").innerHTML=editable?"":`<div class="ro-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Solo se edita el registro del día de hoy. Este día queda como consulta.</div>`;
+  const list=document.getElementById("dayList");
+  if(!entries.length){ list.innerHTML=`<div class="empty" style="padding:26px 16px"><p style="margin:0">Sin registros este día.</p></div>`; }
+  else{
+    list.innerHTML=entries.map(e=>`<div class="sale-row"><span class="hr">${esc(e.hora||"")}</span><span class="cli">${e.cliente?esc(e.cliente):'<span style="color:var(--faint)">Sin nombre</span>'}${e.compro?"":'<small>No compró</small>'}</span>${e.compro?`<span class="tk">${money(e.ticket)}</span>`:`<span class="nobuy">solo ingresó</span>`}${editable?`<button class="x" data-delsale="${e.id}" title="Quitar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>`:""}</div>`).join("");
+    if(editable) list.querySelectorAll("[data-delsale]").forEach(b=>b.onclick=()=>{ Store.set("ventas",(Store.get("ventas")||[]).filter(x=>x.id!==b.dataset.delsale)); renderDay(); renderSucursal(); toast("Registro quitado"); });
+  }
+  document.getElementById("dayForm").style.display=editable?"":"none";
+  if(editable){ const now=new Date(); document.getElementById("s_hora").value=String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0"); }
+}
+segHandler("s_compro","b",v=>{ sCompro=v==="1"; document.getElementById("s_ticket").disabled=!sCompro; if(!sCompro)document.getElementById("s_ticket").value=""; });
+document.getElementById("saleForm").addEventListener("submit",e=>{
+  e.preventDefault(); if(!dayCtx||dayCtx.fecha!==todayISO())return;
+  const all=Store.get("ventas")||[];
+  all.push({id:uid(),suc:dayCtx.suc,fecha:dayCtx.fecha,hora:val("s_hora"),cliente:val("s_cli"),compro:sCompro,ticket:sCompro?(+val("s_ticket")||0):0,creada:Date.now()});
+  Store.set("ventas",all); e.target.reset(); sCompro=true; segSet("s_compro","b","1"); document.getElementById("s_ticket").disabled=false; renderDay(); renderSucursal(); toast("Registro cargado");
+});
+document.getElementById("dayClose").onclick=closeDay;
+document.getElementById("dayExportBtn").onclick=()=>{
+  if(!dayCtx)return; const entries=ventasDe(dayCtx.suc,dayCtx.fecha).slice().sort((a,b)=>(a.hora||"").localeCompare(b.hora||""));
+  if(!entries.length){ toast("Sin registros para exportar"); return; }
+  const rows=[["Hora","Cliente","Compró","Ticket"]];
+  entries.forEach(e=>rows.push([e.hora||"",e.cliente||"",e.compro?"Sí":"No",e.compro?e.ticket:0]));
+  const csv="\uFEFF"+rows.map(r=>r.map(f=>`"${(f+"").replace(/"/g,'""')}"`).join(",")).join("\n");
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
+  a.download=`ventas-${dayCtx.suc.replace(/[^a-z0-9]+/gi,"-").toLowerCase()}-${dayCtx.fecha}.csv`; a.click(); URL.revokeObjectURL(a.href); toast("Día descargado");
+};
 function bindGoto(){ document.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>go(b.dataset.goto)); }
 document.getElementById("promoFilters").querySelectorAll(".chip-filter").forEach(c=>c.onclick=()=>{ promoFilter=c.dataset.pf; document.querySelectorAll("#promoFilters .chip-filter").forEach(x=>x.classList.toggle("on",x===c)); renderPromos(); });
 document.getElementById("sucCtx").onchange=()=>{ renderPromos(); renderCapas(); };
 document.getElementById("menuBtn").onclick=()=>document.getElementById("side").classList.toggle("open");
-document.getElementById("drClose").onclick=closeDrawer; document.getElementById("scrim").onclick=closeDrawer;
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeDrawer(); });
+document.getElementById("drClose").onclick=closeDrawer; document.getElementById("scrim").onclick=()=>{ closeDrawer(); closeDay(); };
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeDrawer(); closeDay(); } });
 
 function segHandler(id,attr,cb){ const wrap=document.getElementById(id); wrap.querySelectorAll("button").forEach(b=>b.onclick=()=>{ wrap.querySelectorAll("button").forEach(x=>x.classList.remove("on")); b.classList.add("on"); cb(b.dataset[attr]); }); }
 function resetDemo(){
