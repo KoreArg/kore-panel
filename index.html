@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Koré · Panel interno</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -381,12 +384,14 @@
         <option>Santa Fe</option><option>Paraná</option>
         <option>Concepción del Uruguay</option><option>Esperanza</option>
       </select>
+      <div style="margin-top:12px;font-size:10px;color:var(--green-300);opacity:.7;letter-spacing:.12em">VERSIÓN 5 · SUCURSALES</div>
     </div>
   </aside>
 
   <div class="main">
     <header class="topbar">
       <button class="btn ghost menu-btn" id="menuBtn" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <button class="btn ghost sm" id="backBtn" aria-label="Volver" title="Volver" style="display:none;padding:7px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
       <div>
         <h1 id="pageTitle">Promociones vigentes</h1>
         <div class="sub" id="pageSub">Lo que está al aire hoy en el mostrador y en redes</div>
@@ -1046,9 +1051,10 @@ const TITLES={
   "new-capa":["Nueva capacitación","Agendá una fecha y abrí inscripciones"],
   users:["Usuarios","Crear y administrar las cuentas del equipo"],
 };
-let currentSuc="Santa Fe";
-function go(view,arg){
+let currentSuc="Santa Fe", curView=null, navStack=[];
+function go(view,arg,isBack){
   if(view==="users" && !Auth.isAdmin()) view="promos";
+  if(!isBack && curView && (curView!==view || (view==="sucursal" && arg && arg!==currentSuc))){ navStack.push({view:curView,suc:currentSuc}); if(navStack.length>60)navStack.shift(); }
   if(view==="sucursal" && arg) currentSuc=arg;
   document.querySelectorAll(".view").forEach(v=>v.classList.remove("on"));
   document.getElementById("view-"+view).classList.add("on");
@@ -1063,8 +1069,11 @@ function go(view,arg){
   if(view==="capas") renderCapas();
   if(view==="users") renderUsers();
   if(view==="sucursal") renderSucursal();
+  curView=view; document.getElementById("backBtn").style.display=navStack.length?"inline-flex":"none";
   document.getElementById("side").classList.remove("open"); window.scrollTo(0,0);
 }
+function goBack(){ if(!navStack.length)return; const p=navStack.pop(); go(p.view,p.suc,true); }
+document.getElementById("backBtn").onclick=goBack;
 document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{ if(b.dataset.view==="new-promo")clearPromoForm(); if(b.dataset.view==="new-capa")clearCapaForm(); go(b.dataset.view,b.dataset.suc); });
 document.getElementById("topAction").onclick=function(){ if(this.dataset.view==="new-promo")clearPromoForm(); if(this.dataset.view==="new-capa")clearCapaForm(); go(this.dataset.view); };
 
